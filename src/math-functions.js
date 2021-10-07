@@ -83,13 +83,20 @@ to use the + operator for string concatenation.
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
-    const sumProblem4 = sumArr.reduce(sum, 0);
+    /*const sumProblem4 = sumArr.reduce(sum, 0);
     function sum(accumulator, a) {
         return accumulator + a;
     }
     const str = `${sumArr} was passed in as an array of numbers, and ${sumProblem4} is their sum.`;
 
-    return [sumProblem4, str];
+    return [sumProblem4, str];*/
+
+    const sum1 = sum(sumArr[0], sumArr[1])[0];
+    const sum2 = sum(sum1, sumArr[2])[0];
+    const str = `${sumArr} was passed in as an array of numbers, and ${sum2} is their sum.`;
+
+    return [sum2, str];
+                         
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -112,7 +119,11 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
+    const product1 = multiply(multArr[0], multArr[1])[0];
+    const product2 = multiply(product1, multArr[2])[0];
+    const str = `The numbers ${multArr} have a product of ${product2}.`;
 
+    return [product2, str];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
